@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ideathon Kit</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1 id="title">Ideathon Kit</h1>
+      <span class="sub">Engine runner</span>
+    </div>
+    <div class="server"><span class="dot" id="dot"></span><span id="server-text">CONNECTING</span></div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel-head"><span class="idx">01</span><h2>Input</h2></div>
+      <div class="panel-body">
+        <label for="engine">Engine</label>
+        <select id="engine"></select>
+        <p id="engine-desc" class="note"></p>
+
+        <label for="input">Parameters (JSON)</label>
+        <textarea id="input" spellcheck="false" rows="16"></textarea>
+
+        <div class="row">
+          <button id="run" class="primary">Run</button>
+          <button id="reset" class="secondary">Reset sample</button>
+        </div>
+        <p id="error" class="error" role="alert"></p>
+      </div>
+
+      <div class="panel-head"><span class="idx">03</span><h2>Run history</h2></div>
+      <div class="panel-body flush">
+        <ul id="history" class="history"></ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><span class="idx">02</span><h2>Result</h2></div>
+      <div class="panel-body">
+        <div id="cards" class="cards"></div>
+        <canvas id="bars" width="640" height="240" hidden></canvas>
+        <canvas id="grid" width="640" height="360" hidden></canvas>
+        <div id="table-wrap" class="table-wrap"></div>
+        <ul id="log" class="log"></ul>
+        <p class="export"><a id="csv" href="#" hidden>Export table as CSV</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="statusbar">
+    <span id="status">READY</span>
+    <span id="meta"></span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
